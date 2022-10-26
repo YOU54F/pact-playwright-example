@@ -24,7 +24,7 @@ test.describe("Pact with Order API", () => {
           state: "there are orders",
           uponReceiving: "a request for orders",
           withRequest: {
-            path: "/orders",
+            path: "/order",
             method: "GET",
           },
           willRespondWith: {
@@ -40,7 +40,7 @@ test.describe("Pact with Order API", () => {
         return provider.executeTest(async (mockserver) => {
           // Act
           console.log(mockserver);
-          const response = await request.get(`${mockserver.url}/orders`);
+          const response = await request.get(`${mockserver.url}/order`);
 
           //Assert
           expect(response.ok()).toBeTruthy();
