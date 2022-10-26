@@ -13,6 +13,5 @@ jobs:
         with:
           node-version: '16'
       - run: npm i
-      - run: npm i
       - run: npm run test:consumer
       - run: npm run test:provider
